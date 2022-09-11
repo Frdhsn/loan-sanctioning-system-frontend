@@ -1,4 +1,4 @@
-# farhadcodes-a-CP-blog Frontend
+# Loan Sanctioning Frontend
 
 # About
-This repository serves as a frontend for my farhadcodes-a-CP-blog applcation which is a fullstack training/learning project at CEFALO. You can find the backend here https://github.com/Frdhsn/farhadcodes-a-CP-blog
+This repository serves as a frontend for loan sanctioning applcation which is a fullstack loan prediction ML project. You can find the backend https://github.com/Frdhsn/loan-sanctioning-system
