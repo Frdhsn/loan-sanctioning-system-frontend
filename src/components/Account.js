@@ -18,7 +18,7 @@ export default function Account() {
   const navigate = useNavigate();
 
   const handlePostStory = () => {
-    navigate('/write');
+    navigate('/applyForLoan/');
   };
   const showAllStory = () => {
     navigate('/stories/user/' + user.data.user.id);
@@ -28,8 +28,8 @@ export default function Account() {
       {user ? (
         <>
           <div className={classes.accountClickable}>
-            <span title="Create a blog" onClick={handlePostStory}>
-              Write
+            <span title="Apply for loan" onClick={handlePostStory}>
+              Apply
             </span>
           </div>
           <span className="material-icons-outlined" title="Account">
@@ -37,7 +37,8 @@ export default function Account() {
           </span>
           <div className={classes.accountClickable}>
             <span title="Click to see all blogs of this user" onClick={showAllStory}>
-              {user.data.customer.name}
+              {/* {user.data.customer.name} */}
+              bug
             </span>
           </div>
           <span className="material-icons-outlined" title="Logout" onClick={logout}>
