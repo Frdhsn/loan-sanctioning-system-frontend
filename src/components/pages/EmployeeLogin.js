@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/images/login.jpg';
 import { Context } from '../../contexts/Context';
-import authService from '../../services/authService';
+import authService from '../../services/employeeService';
 import classes from '../../styles/Login.module.css';
 import Button from '../Button';
 import Form from '../Form';
@@ -48,7 +48,7 @@ const Login = () => {
 
   return (
     <>
-      <h1>Customer Login</h1>
+      <h1>Employee Login page</h1>
 
       <div className="column">
         <Illustration image={img} />
@@ -74,12 +74,8 @@ const Login = () => {
           </Button>
 
           {error && <p className="error">{error}</p>}
-
           <div className="info">
-            Don't have an account? <Link to="/signup">Signup</Link> instead.
-          </div>
-          <div className="info">
-            Are you an employee? <Link to="/employee/Login">Login</Link> instead.
+            Are you a customer? <Link to="/Login">Login</Link> instead.
           </div>
         </Form>
       </div>
