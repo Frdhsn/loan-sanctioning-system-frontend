@@ -6,13 +6,15 @@ import classes from './../styles/Account.module.css';
 export default function Account() {
   const { user, dispatch } = useContext(Context);
 
-  // console.log('testing ' + user);
+  console.log('testing from account.js');
   // console.log('testing ' + user.data);
   // console.log('testing ' + user.data.email);
   console.log(user);
 
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
+
+    navigate('/');
   };
 
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ export default function Account() {
     navigate('/applyForLoan/');
   };
   const showAllStory = () => {
-    navigate('/stories/user/' + user.data.user.id);
+    navigate('/customers/loan/' + user.data.customer.id);
   };
   return (
     <div className={classes.account}>
@@ -36,9 +38,9 @@ export default function Account() {
             account_circle
           </span>
           <div className={classes.accountClickable}>
-            <span title="Click to see all blogs of this user" onClick={showAllStory}>
-              {/* {user.data.customer.name} */}
-              bug
+            <span title="Click to see your loan status" onClick={showAllStory}>
+              {user.data.customer.name}
+              {/* bug */}
             </span>
           </div>
           <span className="material-icons-outlined" title="Logout" onClick={logout}>

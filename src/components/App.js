@@ -6,11 +6,10 @@ import Layout from './Layout';
 import EmployeeLogin from './pages/EmployeeLogin';
 import Home from './pages/Home';
 import LoanForm from './pages/LoanForm';
+import LoanStatus from './pages/LoanStatus';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Signup from './pages/SignUp';
-import SingleStory from './pages/SingleStory';
-import StoryByUser from './pages/StoryByUser';
 
 const App = () => {
   const { user } = useContext(Context);
@@ -24,9 +23,7 @@ const App = () => {
           <Route exact path="/employee/login" element={<EmployeeLogin />} />
 
           <Route exact path="/applyForLoan/" element={<LoanForm />} />
-
-          <Route exact path="/stories/:id" element={<SingleStory />} />
-          <Route exact path="/stories/user/:id" element={<StoryByUser />} />
+          <Route exact path="/customers/loan/:id" element={<LoanStatus />} />
           <Route exact path="*" element={<NotFound />} />
         </Routes>
       </Layout>

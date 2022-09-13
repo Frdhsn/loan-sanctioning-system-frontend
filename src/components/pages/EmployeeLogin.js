@@ -39,6 +39,7 @@ const Login = () => {
         }
       );
       dispatch({ type: 'LOGIN_SUCCESSS', payload: res.data.data });
+      // localStorage.setItem('user')
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE' });
       console.log(err);
@@ -48,7 +49,7 @@ const Login = () => {
 
   return (
     <>
-      <h1>Employee Login page</h1>
+      <h1>Employee Login</h1>
 
       <div className="column">
         <Illustration image={img} />
