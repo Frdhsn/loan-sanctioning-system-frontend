@@ -63,14 +63,6 @@ export default function SingleStory() {
   return (
     <>
       <div className={classes.singleStory}>
-        {onReview === true ? <h1>We're processing your LOAN application! :D</h1> : ''}
-        {approved ? <h1>Congrats! Your LOAN application is APPROVED! :D</h1> : ''}
-        {declined ? <h1>Sorry! Your LOAN application is DECLINED! </h1> : ''}
-        {declined === false && approved === false && onReview === false ? (
-          <h1> You've not applied for any LOAN! :| </h1>
-        ) : (
-          ''
-        )}
         {onReview === true ? <Illustration image={onereview_img} /> : ''}
         {approved ? <Illustration image={approved_img} /> : ''}
         {declined ? <Illustration image={declined_img} /> : ''}

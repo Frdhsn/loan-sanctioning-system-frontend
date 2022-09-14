@@ -8,30 +8,30 @@ export default function Story({ post }) {
   let path = window.location.pathname;
   //console.log(path);
   if (path === '/') {
-    path = path + 'stories/' + post.id;
+    path = path + 'loan/' + post.id;
   } else {
-    path = '/stories/' + post.id;
+    path = '/loan/' + post.id;
   }
   return (
     //<Link to={`stories/${post.id}`}>
     <Link to={path}>
       <div className={classes.story}>
         <img src={image} alt="" />
-        <p>
-          #{post.id} {post.title}
-        </p>
+        <p>Loan ID: {post.id}</p>
         <div className={classes.qmeta}>
-          <p>Topic: {post.topic}</p>
+          <p>
+            Application Status: <b>{post.status}</b>
+          </p>
         </div>
         <div className={classes.qmeta}>
-          <p> Difficulty : {post.difficulty}</p>
+          <p> Amount : {post.currentLoanAmount}</p>
         </div>
-        <div>
-          <div className={classes.desc}>Description: {post.description.substring(0, 200)}</div>
-          <div className={classes.p}>Click to read more</div>
-        </div>
-        <div>
-          <p>Created At: {new Date(post.createdAt).toDateString()}</p>
+        <div></div>
+        <div>Applied at: {new Date(post.createdAt).toDateString()}</div>
+        <div className={classes.p}>
+          <b>
+            <i>Click to see more. . .</i>
+          </b>
         </div>
       </div>
     </Link>
