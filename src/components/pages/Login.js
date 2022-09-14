@@ -48,7 +48,7 @@ const Login = () => {
 
   return (
     <>
-      <h1>Customer Login</h1>
+      <h1>Customer Log In</h1>
 
       <div className="column">
         <Illustration image={img} />

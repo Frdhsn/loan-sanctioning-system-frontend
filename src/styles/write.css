@@ -1,10 +1,9 @@
 .write {
   padding-top: 50px;
 }
-
 .writeImg {
   margin-left: 150px;
-  width: 70vw;
+  width: 50vw;
   height: 250px;
   border-radius: 10px;
   object-fit: cover;
@@ -15,14 +14,14 @@
 }
 
 .writeFormGroup {
-  margin-left: 150px;
+  margin-left: 100px;
   display: flex;
   align-items: center;
 }
 
 .writeIcon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid;
   display: flex;
@@ -45,7 +44,7 @@
 }
 
 .writeText {
-  font-size: 20px;
+  font-size: 10px;
   height: 100vh;
 }
 

@@ -253,12 +253,6 @@ export default function SingleLoan() {
                 </td>
               </tr>
               <tr>
-                <td className="text-left">Annual Income</td>
-                <td className="text-left" colspan="2">
-                  {post.annualIncome}
-                </td>
-              </tr>
-              <tr>
                 <td className="text-left">Bankruptcies</td>
                 <td className="text-left" colspan="2">
                   {post.bankruptcies}
