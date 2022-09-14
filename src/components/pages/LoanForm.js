@@ -65,12 +65,12 @@ export default function PostStory() {
       });
 
       const res = await instance.post(
-        'http://127.0.0.1:3005/api/v1/customers/loan/' + user.data.customer.id,
+        'http://127.0.0.1:3005/api/v1/customers/loan/' + user.data.user.id,
         newPost
       );
       // console.log(`printing ` + res);
       //window.location.replace('http://localhost:3000/customers/loan/' + user.data.customer.id);
-      navigate('/customers/loan/' + user.data.customer.id); // need to login again
+      navigate('/customers/loan/' + user.data.user.id); // need to login again
       window.location.reload();
       //console.log(`after axios post story`);
     } catch (err) {
