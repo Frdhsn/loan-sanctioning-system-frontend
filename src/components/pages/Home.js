@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div className="columnn">
-        <Illustration image={img} className="cell" />
+        <Illustration image={img} />
         <div>
           <div className="cell">
             <article className="article">

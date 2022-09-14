@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Context } from '../../contexts/Context';
 import '../../styles/SingleLoan.module.css';
 import Button from '../Button';
+import Illustration from '../Illustration';
+import img from './../../assets/images/appform.jpg';
 
 export default function SingleLoan() {
   console.log(`single loan page a ashchi`);
@@ -204,124 +206,167 @@ export default function SingleLoan() {
   const [openModal, setModalOpen] = useState(false);
   return (
     <>
-      {/* <div className={classes.singleStory}>
-        <div className={classes.singleStoryWrapper}>
-          <h1>Details of the loan application:</h1>
-        </div>
-      </div>
-      <div className={classes.singleStoryInfo}>
-        <span
-          title="Click to see all blogs of this user"
-          className={classes.singleStoryAuthor}
-          onClick={showAllStory}
-        ></span>
-      </div> */}
-      {/* starting from here */}
+      <div className="column">
+        <Illustration image={img} />
+        <body>
+          <div className="table-title">
+            <h3>Application Information</h3>
+          </div>
+          <table className="table-fill">
+            <thead>
+              <tr>
+                <th className="text-left">Attributes</th>
+                <th className="text-left" colspan="2">
+                  Value
+                </th>
+              </tr>
+            </thead>
+            <tbody className="table-hover">
+              <tr>
+                <td className="text-left">Name</td>
+                <td className="text-left" colspan="2">
+                  {USER.name}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Customer ID</td>
+                <td className="text-left" colspan="2">
+                  {USER.id}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Email</td>
+                <td className="text-left" colspan="2">
+                  {USER.email}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Bank Account No.</td>
+                <td className="text-left" colspan="2">
+                  {USER.bankAccountNo}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Annual Income</td>
+                <td className="text-left" colspan="2">
+                  {post.annualIncome}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Annual Income</td>
+                <td className="text-left" colspan="2">
+                  {post.annualIncome}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Bankruptcies</td>
+                <td className="text-left" colspan="2">
+                  {post.bankruptcies}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Credit Balance</td>
+                <td className="text-left" colspan="2">
+                  {post.creditBalance}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Credit Score</td>
+                <td className="text-left" colspan="2">
+                  {post.creditScore}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Last Delinquent</td>
+                <td className="text-left" colspan="2">
+                  {post.lastDelinquent}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Max Open Credit</td>
+                <td className="text-left" colspan="2">
+                  {post.maxOpenCredit}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Monthly Debt</td>
+                <td className="text-left" colspan="2">
+                  {post.monthlyDebt}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Open Accounts</td>
+                <td className="text-left" colspan="2">
+                  {post.openAccounts}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Purpose</td>
+                <td className="text-left" colspan="2">
+                  {post.purpose}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Term</td>
+                <td className="text-left" colspan="2">
+                  {post.term}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Years in Current Job</td>
+                <td className="text-left" colspan="2">
+                  {post.yearsInCurrentJob}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Years of Credit History</td>
+                <td className="text-left" colspan="2">
+                  {post.yearsofCreditHistory}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Account Created</td>
+                <td className="text-left" colspan="2">
+                  {new Date(USER.createdAt).toDateString()}
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Application date</td>
+                <td className="text-left" colspan="2">
+                  {new Date(post.createdAt).toDateString()}
+                </td>
+              </tr>
 
-      <body>
-        <div className="table-title">
-          <h3>Application Information</h3>
-        </div>
-        <table className="table-fill">
-          <thead>
-            <tr>
-              <th className="text-left">Attributes</th>
-              <th className="text-left">Value</th>
+              <tr>
+                <td className="text-left">Prediction Score</td>
+                <td className="text-left" colspan="2">
+                  {post.score} %
+                </td>
+              </tr>
+              <tr>
+                <td className="text-left">Application Status</td>
+                <td className="text-left" colspan="2">
+                  {post.status}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <tr className="xd">
+              <td>
+                <Button onClick={handlePrediction}>Predict</Button>
+              </td>
+              <td>
+                <Button onClick={handleApprove}>Approve</Button>
+              </td>
+              <td>
+                <Button color="#f44336" onClick={handleDecline}>
+                  Decline
+                </Button>
+              </td>
             </tr>
-          </thead>
-          <tbody className="table-hover">
-            <tr>
-              <td className="text-left">Name</td>
-              <td className="text-left">{USER.name}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Customer ID</td>
-              <td className="text-left">{USER.id}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Email</td>
-              <td className="text-left">{USER.email}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Bank Account No.</td>
-              <td className="text-left">{USER.bankAccountNo}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Annual Income</td>
-              <td className="text-left">{post.annualIncome}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Annual Income</td>
-              <td className="text-left">{post.annualIncome}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Bankruptcies</td>
-              <td className="text-left">{post.bankruptcies}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Credit Balance</td>
-              <td className="text-left">{post.creditBalance}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Credit Score</td>
-              <td className="text-left">{post.creditScore}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Last Delinquent</td>
-              <td className="text-left">{post.lastDelinquent}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Max Open Credit</td>
-              <td className="text-left">{post.maxOpenCredit}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Monthly Debt</td>
-              <td className="text-left">{post.monthlyDebt}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Open Accounts</td>
-              <td className="text-left">{post.openAccounts}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Purpose</td>
-              <td className="text-left">{post.purpose}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Term</td>
-              <td className="text-left">{post.term}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Years in Current Job</td>
-              <td className="text-left">{post.yearsInCurrentJob}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Years of Credit History</td>
-              <td className="text-left">{post.yearsofCreditHistory}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Account Created</td>
-              <td className="text-left">{new Date(USER.createdAt).toDateString()}</td>
-            </tr>
-            <tr>
-              <td className="text-left">Application date</td>
-              <td className="text-left">{new Date(post.createdAt).toDateString()}</td>
-            </tr>
-
-            <tr>
-              <td className="text-left">Prediction Score</td>
-              <td className="text-left">{post.score} %</td>
-            </tr>
-            <tr>
-              <td className="text-left">Application Status</td>
-              <td className="text-left">{post.status}</td>
-            </tr>
-          </tbody>
-        </table>
-      </body>
-      <div>
-        <Button onClick={handlePrediction}>Predict</Button>
-        <Button onClick={handleApprove}>Approve</Button>
-        <Button onClick={handleDecline}>Decline</Button>
+          </table>
+        </body>
       </div>
     </>
   );
